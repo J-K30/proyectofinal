@@ -1,0 +1,120 @@
+.overlay {
+	background: rgba(0,0,0,.3);
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	visibility: hidden;
+    
+}
+
+.overlay.active {
+	visibility: visible;
+}
+
+.popup {
+	background: #eee9e9;
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	font-family: 'Montserrat', sans-serif;
+	padding: 20px;
+	text-align: center;
+	width: auto;
+	transition: .3s ease all;
+	transform: scale(0.7);
+	opacity: 0;
+}
+
+.popup .btn-cerrar-popup {
+	font-size: 16px;
+	line-height: 16px;
+	display: block;
+	text-align: right;
+	transition: .3s ease all;
+	color: #BBBBBB;
+}
+
+.popup .btn-cerrar-popup:hover {
+	color: #000;
+}
+
+.popup h3 {
+	font-size: 36px;
+	font-weight: 600;
+	margin-bottom: 10px;
+	opacity: 0;
+}
+
+.popup h4 {
+	font-size: 20px;
+	font-weight: 300;
+	margin-bottom: 40px;
+	opacity: 0;
+    color: rgba(65, 62, 62, 0.925);
+}
+
+.yape img{
+    width: 200px;
+    border-radius: 3px;
+    padding:  8px 0;
+}
+
+.whatsaap img {
+    width: 200px;
+    border-radius: 3px;
+    padding:  8px 0;
+}
+
+.medios-pago{
+    display: flex;
+    justify-content: center;
+}
+
+.pago-ser{
+	background: chartreuse;
+	border-radius: 5px;
+	height: 30px;
+	width: 100px;
+}
+
+
+/* ------------------------- */
+/* ANIMACIONES */
+/* ------------------------- */
+.popup.active {	transform: scale(1); opacity: 1; }
+.popup.active h3 { animation: entradaTitulo .8s ease .5s forwards; }
+.popup.active h4 { animation: entradaSubtitulo .8s ease .5s forwards; }
+.popup.active .yape { animation: entradaInputs 1s linear .5s forwards; }
+.popup.active .whatsaap { animation: entradaInputs 1s linear 1s forwards; }
+@keyframes entradaTitulo {
+	from {
+		opacity: 0;
+		transform: translateY(-25px);
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes entradaSubtitulo {
+	from {
+		opacity: 0;
+		transform: translateY(25px);
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes entradaInputs {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
